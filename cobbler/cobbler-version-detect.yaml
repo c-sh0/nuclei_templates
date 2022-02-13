@@ -26,7 +26,6 @@ requests:
       - type: status
         status:
           - 200
-
       - type: word
         part: body
         words:
@@ -34,14 +33,13 @@ requests:
           - 'version_tuple'
           - '<string>'
         condition: or
-
       - type: word
         part: header
         words:
           - "text/xml"
-
     extractors:
       - type: regex
         part: body
+        group: 1
         regex:
-          - ">([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})<"
+          - "<value><string>([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})</string></value>"

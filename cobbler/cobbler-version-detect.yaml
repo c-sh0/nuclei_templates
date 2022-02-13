@@ -11,6 +11,7 @@ requests:
   - method: POST
     path:
       - "{{BaseURL}}/cobbler_api"
+
     body: |
         <?xml version='1.0'?>
         <methodCall>
@@ -26,17 +27,17 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         part: body
         words:
-          - 'methodResponse'
-          - 'version_tuple'
-          - '<string>'
-        condition: or
+          - '<name>version</name>'
+
       - type: word
         part: header
         words:
-          - "text/xml"
+          - "Content-Type: text/xml"
+
     extractors:
       - type: regex
         part: body

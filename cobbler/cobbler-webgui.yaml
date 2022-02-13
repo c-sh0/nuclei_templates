@@ -11,14 +11,21 @@ info:
 
 requests:
   - method: GET
-    path:
-      - "{{BaseURL}}/cobbler_web"
     redirects: true
     max-redirects: 2
+    path:
+      - "{{BaseURL}}/cobbler_web"
+
+    matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 200
+
       - type: word
         part: body
         words:
-          - "cobbler_webui_content"
           - "<title>Cobbler Web Interface</title>"
+          - "/cobbler_webui_content/"
+          - "/cobbler_web/do_login"
         condition: or

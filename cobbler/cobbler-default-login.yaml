@@ -48,9 +48,14 @@ requests:
       - type: word
         part: header
         words:
-          - "text/xml"
+          - 'Content-Type: text/xml'
+
+      - type: dsl
+        dsl:
+          - "!contains(tolower(body), '<name>faultCode</name>')"
+          - "!contains(tolower(body), 'login failed')"
 
       - type: regex
-        regex:
-          - ">([a-zA-Z0-9].+)==<"
         part: body
+        regex:
+          - "(.*[a-zA-Z0-9].+==)</string></value>"

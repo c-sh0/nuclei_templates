@@ -20,6 +20,11 @@ requests:
         status:
           - 404
 
+      - type: word
+        part: header
+        words:
+          - "X-Puppet-Version:"
+
     extractors:
       - type: regex
         part: header

@@ -1,0 +1,29 @@
+id: puppet-version
+
+info:
+  name: Puppet Version Detection
+  author: c-sh0
+  reference:
+     - https://insinuator.net/2020/09/puppet-assessment-techniques/
+  severity: info
+  description: Obtain Puppet Version
+  tags: tech,puppet,api
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/puppet-ca/v1/certificate_request/{{randstr}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 404
+
+    extractors:
+      - type: regex
+        part: header
+        group: 1
+        regex:
+          - "X-Puppet-Version:.*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})"
+

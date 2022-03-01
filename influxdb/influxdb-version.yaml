@@ -26,7 +26,7 @@ requests:
       - type: word
         part: header
         words:
-          - 'X-Influxdb-'
+          - "X-Influxdb-Version:"
 
     extractors:
       - type: regex

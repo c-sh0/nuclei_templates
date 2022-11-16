@@ -1,8 +1,8 @@
-id: tyan-rmm-bmc-default-login
+id: tyan-megarac-sp-default-login
 
 info:
-  name: Tyan Remote Management Module (RMM) Default Login
-  description: Tyan Remote Management Module (RMM) Default Login
+  name: Tyan Megarac SP Default Login
+  description: Tyan Megarac SP Default Login
   author: c-sh0
   severity: high
   reference:
@@ -17,12 +17,12 @@ info:
 requests:
   - raw:
       - |
-        POST /api/session HTTP/1.1
+        POST /rpc/WEBSES/create.asp HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
-        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        Content-Type: application/x-www-form-urlencoded
 
-        username={{username}}&password={{password}}
+        WEBVAR_USERNAME={{username}}&WEBVAR_PASSWORD={{password}}
 
     attack: pitchfork
     payloads:
@@ -40,9 +40,7 @@ requests:
         status:
           - 200
 
-      - type: word
+      - type: regex
         part: body
-        words:
-          - "\"racsession_id\":"
-          - "\"CSRFToken\":"
-        condition: and
+        regex:
+          - "'SESSION_COOKIE'(\\s+):(\\s+)'([A-Za-z0-9]+)'"

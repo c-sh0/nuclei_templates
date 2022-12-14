@@ -46,9 +46,3 @@ requests:
         part: body
         words:
           - "/redfish/v1/$metadataSessionService/Sessions"
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - X-Auth-Token

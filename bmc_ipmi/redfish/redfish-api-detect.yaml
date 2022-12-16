@@ -1,8 +1,8 @@
 id: redfish-api-detect
 
 info:
-  name: Redfish API Server Detection
-  description: Redfish API Server Detection
+  name: Redfish API Detection
+  description: Redfish API Detection
   author: c-sh0
   severity: info
   reference:

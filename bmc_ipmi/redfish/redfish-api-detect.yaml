@@ -30,6 +30,11 @@ requests:
           - "/redfish/v1/$metadata"
 
     extractors:
+      - type: kval
+        part: header
+        kval:
+          - Server
+
       - type: json
         part: body
         json:

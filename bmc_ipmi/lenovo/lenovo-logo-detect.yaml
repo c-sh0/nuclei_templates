@@ -1,8 +1,8 @@
 id: lenovo-logo-detect
 
 info:
-  name: Supermicro Logo Detection
-  description: Supermicro Logo Detection (IPMI UI)
+  name: Lenovo Logo Detection
+  description: Lenovo Logo Detection
   author: c-sh0
   severity: info
   tags: tech,lenovo

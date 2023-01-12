@@ -5,6 +5,8 @@ info:
   author: c-sh0
   description: Corero Smartwall Service Portal Detection
   severity: info
+  reference:
+    - https://www.corero.com
   metadata:
     shodan-query: http.title:"SmartWall Service Portal"
   tags: corero,webserver,portal,webui

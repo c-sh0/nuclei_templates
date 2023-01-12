@@ -1,7 +1,7 @@
-id: corero-logo-detection
+id: corero-logo-detect
 
 info:
-  name: Corero Network Security logo detection
+  name: Corero Network Security Inc. logo detection
   author: c-sh0
   severity: info
   metadata:

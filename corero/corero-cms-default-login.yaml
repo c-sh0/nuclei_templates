@@ -6,7 +6,7 @@ info:
   author: c-sh0
   severity: high
   reference:
-    - https://www.juniper.net/documentation/en_US/corero-smartwall9.7.0/information-products/topic-collections/Corero_SmartWall_TDD_UG/Content/GettingStarted_Hardware_QS/gs_troubleshooting.htm
+    - https://www.juniper.net/documentation/en_US/corero-smartwall9.7.5/information-products/topic-collections/Corero_SmartWall_CMS_UG/Content/TDD/tdd_manage_users.htm
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
@@ -27,10 +27,10 @@ requests:
     payloads:
       username:
         - admin
+        - monitor
       password:
         - smartwall
 
-    stop-at-first-match: true
     redirects: false
     matchers-condition: and
     matchers:
